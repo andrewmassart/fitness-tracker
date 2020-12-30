@@ -2,6 +2,7 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
+    fxLayoutGap="10px"
     #formSubmit="ngForm"
     (ngSubmit)="onSubmit(formSubmit)"
   >
@@ -40,7 +41,7 @@
     <mat-form-field>
       <input
         matInput
-        placeholder="Your birthdate"
+        placeholder="Your birth date"
         [matDatepicker]="picker"
         [max]="maxDate"
         ngModel
@@ -53,6 +54,13 @@
     <mat-checkbox ngModel name="agree" required color="primary"
       >Agree to terms and conditions.</mat-checkbox
     >
-    <button type="submit" mat-raised-button color="primary">Submit</button>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="formSubmit.invalid"
+    >
+      Submit
+    </button>
   </form>
 </section>
