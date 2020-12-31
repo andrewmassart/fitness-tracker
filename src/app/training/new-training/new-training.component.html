@@ -13,7 +13,14 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions fxLayoutAlign="center">
-      <button type="submit" mat-button color="accent">Start</button>
+      <button
+        type="submit"
+        mat-button
+        color="accent"
+        (click)="onStartTraining()"
+      >
+        Start
+      </button>
     </mat-card-actions>
   </mat-card>
 </section>
