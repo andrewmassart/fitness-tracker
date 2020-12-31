@@ -13,6 +13,7 @@ export class ExerciseService {
   ];
 
   private currentRunningExercise: Exercise;
+  private exercises: Exercise[] = [];
 
   getAvailableExercises() {
     // .slice() creates a new array that can be edited
@@ -24,5 +25,31 @@ export class ExerciseService {
       (ex) => ex.id === selectedId
     );
     this.exerciseChanged.next({ ...this.currentRunningExercise });
+  }
+
+  completeExercise() {
+    this.exercises.push({
+      ...this.currentRunningExercise,
+      date: new Date(),
+      state: 'completed',
+    });
+    this.currentRunningExercise = null;
+    this.exerciseChanged.next(null);
+  }
+
+  cancelExercise(progress: number) {
+    this.exercises.push({
+      ...this.currentRunningExercise,
+      duration: this.currentRunningExercise.duration * (progress / 100),
+      calories: this.currentRunningExercise.duration * (progress / 100),
+      date: new Date(),
+      state: 'cancelled',
+    });
+    this.currentRunningExercise = null;
+    this.exerciseChanged.next(null);
+  }
+
+  getCurrentRunningExercise() {
+    return { ...this.currentRunningExercise };
   }
 }
