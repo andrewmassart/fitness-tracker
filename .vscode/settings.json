@@ -3,5 +3,6 @@
         "Datepicker",
         "codelyzer",
         "minlength"
-    ]
+    ],
+    "tslint.ignoreDefinitionFiles": true
 }
