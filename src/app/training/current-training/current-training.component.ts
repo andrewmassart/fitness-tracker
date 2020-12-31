@@ -16,6 +16,10 @@ export class CurrentTrainingComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
+    this.startOrResumeTimer();
+  }
+
+  startOrResumeTimer() {
     // this still works despite the error it throws
     this.timer = window.setInterval(() => {
       this.progress = this.progress + 5;
@@ -36,6 +40,8 @@ export class CurrentTrainingComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.trainingExit.emit();
+      } else {
+        this.startOrResumeTimer();
       }
     });
   }
