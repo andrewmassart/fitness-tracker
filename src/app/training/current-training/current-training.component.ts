@@ -15,7 +15,8 @@ export class CurrentTrainingComponent implements OnInit {
   constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
-    this.timer = setInterval(() => {
+    // this still works despite the error it throws
+    this.timer = window.setInterval(() => {
       this.progress = this.progress + 5;
       if (this.progress >= 100) {
         clearInterval(this.timer);
@@ -24,6 +25,14 @@ export class CurrentTrainingComponent implements OnInit {
   }
   onStop() {
     clearInterval(this.timer);
-    this.dialog.open(StopTrainingComponent);
+    const dialogRef = this.dialog.open(StopTrainingComponent, {
+      data: {
+        progress: this.progress,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 }
