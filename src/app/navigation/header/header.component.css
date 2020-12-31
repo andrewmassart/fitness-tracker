@@ -3,6 +3,10 @@ a {
   color: white;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 a:hover,
 a:active {
   color: lightslategrey;

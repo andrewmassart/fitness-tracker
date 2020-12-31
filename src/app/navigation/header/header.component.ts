@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService) {}
 
-  ngOnDestroy(): void {
-    this.authSubscription.unsubscribe();
-  }
-
   ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe(
       (authStatus) => {
@@ -35,5 +31,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   showSidenav() {
     this.sidenavToggle.emit();
+  }
+
+  onLogout() {
+    this.authService.logout();
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
   }
 }
