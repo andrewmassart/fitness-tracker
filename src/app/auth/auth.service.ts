@@ -5,13 +5,18 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AuthData } from './auth-data.model';
 import { User } from './user.model';
+import { ExerciseService } from '../training/exercise.service';
 
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
-  private user: User;
+  private isAuthenticated = false;
 
-  constructor(private router: Router, private fireAuth: AngularFireAuth) {}
+  constructor(
+    private router: Router,
+    private fireAuth: AngularFireAuth,
+    private exerciseService: ExerciseService
+  ) {}
 
   registerUser(authData: AuthData) {
     this.fireAuth
@@ -38,20 +43,18 @@ export class AuthService {
   }
 
   logout() {
-    this.user = null;
+    this.exerciseService.cancelSubscriptions();
     this.authChange.next(false);
     this.router.navigate(['/login']);
-  }
-
-  getUser() {
-    return { ...this.user };
+    this.isAuthenticated = false;
   }
 
   isAuth() {
-    return this.user != null;
+    return this.isAuthenticated;
   }
 
   private authSuccessful() {
+    this.isAuthenticated = true;
     this.authChange.next(true);
     this.router.navigate(['/training']);
   }
