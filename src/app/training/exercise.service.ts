@@ -62,7 +62,7 @@ export class ExerciseService {
       duration: this.currentRunningExercise.duration * (progress / 100),
       calories: this.currentRunningExercise.calories * (progress / 100),
       date: new Date(),
-      state: 'cancelled',
+      state: 'incomplete',
     });
     this.currentRunningExercise = null;
     this.exerciseChanged.next(null);
@@ -72,7 +72,7 @@ export class ExerciseService {
     return { ...this.currentRunningExercise };
   }
 
-  fetchCompletedOrCancelledExercises() {
+  fetchCompletedOrCanceledExercises() {
     this.firebaseSubscriptions.push(
       this.db
         .collection('finishedExercises')
