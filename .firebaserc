@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-tracker-app-f8731": {
+      "hosting": {
+        "fitness-tracker": [
+          "ng-tracker-app-f8731"
+        ]
+      }
+    }
+  }
+}
