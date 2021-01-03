@@ -5,7 +5,7 @@
         Click start to begin
       </mat-card-title>
       <mat-card-content fxLayoutAlign="center">
-        <mat-form-field>
+        <mat-form-field *ngIf="!isLoading">
           <mat-select
             placeholder="Choose an exercise"
             ngModel
@@ -20,8 +20,9 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
       </mat-card-content>
-      <mat-card-actions fxLayoutAlign="center">
+      <mat-card-actions fxLayoutAlign="center" *ngIf="!isLoading">
         <button type="submit" mat-button color="accent" [disabled]="f.invalid">
           Start
         </button>
