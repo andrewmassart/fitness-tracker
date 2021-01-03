@@ -13,6 +13,7 @@ const routes: Routes = [
       import('./training/exercise.module').then(
         (moduleLoaded) => moduleLoaded.ExerciseModule
       ),
+    canLoad: [AuthGuard],
   },
 ];
 
