@@ -23,6 +23,7 @@ import { StopTrainingComponent } from './training/current-training/stop-training
 import { AuthService } from './auth/auth.service';
 import { ExerciseService } from './training/exercise.service';
 import { environment } from '../environments/environment';
+import { UIService } from './shared/ui.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { environment } from '../environments/environment';
     AngularFireAuthModule,
   ],
   // provider ensures that we only use one instance of AuthService
-  providers: [AuthService, ExerciseService],
+  providers: [AuthService, ExerciseService, UIService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
