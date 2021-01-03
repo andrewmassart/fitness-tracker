@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,7 +14,6 @@ import { MaterialModule } from './material.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { UIService } from './shared/ui.service';
-import { ExerciseModule } from './training/exercise.module';
 import { ExerciseService } from './training/exercise.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 
@@ -31,7 +31,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppRoutingModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    ExerciseModule,
+    AngularFirestoreModule,
     AuthModule,
   ],
   // provider ensures that we only use one instance of AuthService
