@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private uiService: UIService) {}
 
   ngOnDestroy(): void {
-    this.loadingSubs.unsubscribe();
+    if (this.loadingSubs) {
+      this.loadingSubs.unsubscribe();
+    }
   }
 
   ngOnInit() {
