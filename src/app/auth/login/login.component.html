@@ -2,11 +2,11 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
-    fxLayoutGap="8px"
+    fxLayoutGap="10px"
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
   >
-    <mat-form-field>
+    <mat-form-field color="accent">
       <input
         type="email"
         matInput
@@ -16,7 +16,7 @@
       <mat-hint>Please enter valid email. </mat-hint>
       <mat-error>Invalid or missing email</mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field color="accent">
       <input
         type="password"
         matInput

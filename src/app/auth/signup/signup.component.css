@@ -3,6 +3,9 @@ mat-form-field {
   padding-left: 15%;
   padding-right: 15%;
 }
+mat-checkbox {
+  padding-bottom: 5px;
+}
 
 .signup-form {
   margin: 8px;

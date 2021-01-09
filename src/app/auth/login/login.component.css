@@ -1,5 +1,6 @@
 mat-form-field {
   width: 300px;
+  padding-bottom: 5px;
 }
 
 .login-section {

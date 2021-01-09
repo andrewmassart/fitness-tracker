@@ -12,6 +12,10 @@
   flex: 1;
 }
 
+mat-sidenav {
+  width: 170px;
+}
+
 main {
   display: flex;
   flex-direction: column;
