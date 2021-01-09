@@ -28,7 +28,7 @@ export class AuthService {
       } else {
         this.exerciseService.cancelSubscriptions();
         this.authChange.next(false);
-        this.router.navigate(['/login']);
+        this.router.navigate(['']);
         this.isAuthenticated = false;
       }
     });

@@ -1,7 +1,8 @@
-<section>
+<div class="login-section">
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
+    fxLayoutGap="8px"
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
   >
@@ -36,4 +37,4 @@
     </button>
     <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
-</section>
+</div>

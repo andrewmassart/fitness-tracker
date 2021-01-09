@@ -1,6 +1,16 @@
-<mat-toolbar color="primary">
+<mat-toolbar
+  color="primary"
+  class="mat-elevation-z7"
+  fxLayout
+  fxLayoutGap="10px"
+>
   <div fxHide.gt-xs>
-    <button mat-icon-button (click)="showSidenav()">
+    <button
+      class="icon-link"
+      mat-icon-button
+      [ngStyle]="{ 'line-height': 0 }"
+      (click)="showSidenav()"
+    >
       <mat-icon>menu</mat-icon>
     </button>
   </div>

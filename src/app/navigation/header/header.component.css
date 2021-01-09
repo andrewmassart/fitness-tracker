@@ -1,15 +1,12 @@
-a {
+a,
+.icon-link {
   text-decoration: none;
-  color: white;
+  color: #e8f9fd;
 }
 
 a:hover {
   cursor: pointer;
-}
-
-a:hover,
-a:active {
-  color: lightslategrey;
+  color: #b3cdd4;
 }
 
 .nav-items {

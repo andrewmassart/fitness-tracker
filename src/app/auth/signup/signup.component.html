@@ -2,11 +2,11 @@
   <form
     fxLayout="column"
     fxLayoutAlign="center center"
-    fxLayoutGap="10px"
+    fxLayoutGap="8px"
     #formSubmit="ngForm"
     (ngSubmit)="onSubmit(formSubmit)"
   >
-    <mat-form-field>
+    <mat-form-field color="accent">
       <input
         type="email"
         matInput
@@ -24,7 +24,10 @@
         >Email is invalid.</mat-error
       >
     </mat-form-field>
-    <mat-form-field hintLabel="Should be at least 6 characters long.">
+    <mat-form-field
+      color="accent"
+      hintLabel="Should be at least 6 characters long."
+    >
       <input
         type="password"
         matInput
@@ -38,10 +41,10 @@
       <mat-hint align="end">{{ pwInput.value?.length }} / 6</mat-hint>
       <mat-error>Should be at least 6 characters long.</mat-error>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field color="accent" appearance="standard">
+      <mat-label>Your birth date</mat-label>
       <input
         matInput
-        placeholder="Your birth date"
         [matDatepicker]="picker"
         [max]="maxDate"
         ngModel
@@ -51,14 +54,14 @@
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <mat-checkbox ngModel name="agree" required color="primary"
+    <mat-checkbox ngModel name="agree" required color="accent"
       >Agree to terms and conditions.</mat-checkbox
     >
     <button
       *ngIf="!isLoading"
       type="submit"
       mat-raised-button
-      color="primary"
+      color="accent"
       [disabled]="formSubmit.invalid"
     >
       Submit
