@@ -28,7 +28,7 @@ import {
   faLinkedin,
   faUbuntu,
 } from '@fortawesome/free-brands-svg-icons';
-import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faCodeBranch, faFile } from '@fortawesome/free-solid-svg-icons';
 import { FooterComponent } from './navigation/footer/footer.component';
 
 @NgModule({
@@ -63,7 +63,8 @@ export class AppModule {
       faCodeBranch,
       faLinkedin,
       faUbuntu,
-      faChrome
+      faChrome,
+      faFile
     );
   }
 }
