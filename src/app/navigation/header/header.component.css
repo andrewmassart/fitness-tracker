@@ -1,15 +1,12 @@
-a {
+a,
+.icon-link {
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.904);
 }
 
 a:hover {
   cursor: pointer;
-}
-
-a:hover,
-a:active {
-  color: lightslategrey;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .nav-items {
@@ -21,4 +18,9 @@ a:active {
 .side-nav-links {
   display: inline-block;
   padding-left: 6px;
+}
+
+.list-item-active {
+  font-weight: bold;
+  color: #a763d1;
 }

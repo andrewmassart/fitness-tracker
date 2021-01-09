@@ -1,6 +1,6 @@
 <section class="new-training" fxLayout fxLayoutAlign="center">
-  <form (ngSubmit)="onStartTraining(f)" #f="ngForm">
-    <mat-card fxFlex.xs="100%" fxFlex="400px">
+  <form (ngSubmit)="onStartTraining(f)" #f="ngForm" class="mat-elevation-z5">
+    <mat-card fxFlex.xs="350px" fxFlex="425px">
       <mat-card-title fxLayoutAlign="center">
         Click start to begin
       </mat-card-title>
@@ -26,7 +26,7 @@
         <button
           *ngIf="exercises"
           type="submit"
-          mat-button
+          mat-raised-button
           color="accent"
           [disabled]="f.invalid"
         >

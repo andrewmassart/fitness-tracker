@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import "@angular/material/prebuilt-themes/purple-green.css";
+/* @import "@angular/material/prebuilt-themes/purple-green.css"; */
 
 html,
 body {
   margin: 0;
-  height: 100%;
+  height: 100vh;
+}
+
+footer {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #5e35b1;
+  box-shadow: 0px -8px 11px rgba(18, 18, 18, 0.5);
 }

@@ -16,6 +16,20 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { UIService } from './shared/ui.service';
 import { ExerciseService } from './training/exercise.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import {
+  faAngular,
+  faChrome,
+  faFirefoxBrowser,
+  faGithubAlt,
+  faLinkedin,
+  faUbuntu,
+} from '@fortawesome/free-brands-svg-icons';
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +37,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,9 +48,22 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AuthModule,
+    FontAwesomeModule,
   ],
   // provider ensures that we only use one instance of AuthService
   providers: [AuthService, ExerciseService, UIService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(
+      faAngular,
+      faGithubAlt,
+      faFirefoxBrowser,
+      faCodeBranch,
+      faLinkedin,
+      faUbuntu,
+      faChrome
+    );
+  }
+}
