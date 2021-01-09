@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-stop-training',
   template: `<h1 mat-dialog-title>Are you sure?</h1>
-    <mat-dialog-content>
+    <mat-dialog-content color="accent">
       <p>You only have {{ 100 - passedData.progress }}% left!</p>
     </mat-dialog-content>
     <mat-dialog-actions>

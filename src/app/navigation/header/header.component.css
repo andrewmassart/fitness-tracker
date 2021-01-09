@@ -19,8 +19,3 @@ a:hover {
   display: inline-block;
   padding-left: 6px;
 }
-
-.list-item-active {
-  font-weight: bold;
-  color: #a763d1;
-}

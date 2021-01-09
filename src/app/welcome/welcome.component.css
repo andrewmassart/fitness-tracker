@@ -2,3 +2,19 @@
   text-align: center;
   padding: 20px;
 }
+
+a {
+  text-decoration: none;
+  color: rgba(233, 128, 252, 0.698);
+}
+li {
+  text-align: left;
+}
+li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.a:hover,
+.a:active {
+  color: rgba(233, 128, 252, 0.644);
+}
