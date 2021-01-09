@@ -1,12 +1,12 @@
 a,
 .icon-link {
   text-decoration: none;
-  color: #e8f9fd;
+  color: rgba(255, 255, 255, 0.904);
 }
 
 a:hover {
   cursor: pointer;
-  color: #b3cdd4;
+  color: #a1887fe7;
 }
 
 .nav-items {
