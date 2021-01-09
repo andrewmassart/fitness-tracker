@@ -1,10 +1,10 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="container">
   <mat-sidenav #sidenav role="navigation">
     <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="content-wrapper">
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-    <main>
+    <main class="content">
       <router-outlet></router-outlet>
     </main>
     <footer fxLayout fxLayoutAlign="center">
